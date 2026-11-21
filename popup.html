@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EyeBreak 20-20-20</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoBg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5BB5E8"/>
+              <stop offset="1" stop-color="#3A8FD0"/>
+            </linearGradient>
+          </defs>
+          <rect width="48" height="48" rx="13" fill="url(#logoBg)"/>
+          <path d="M6 24c4.5-7.5 10.5-11 18-11s13.5 3.500 18 11c-4.500 7.500-10.500 11-18 11S10.500 31.500 6 24z" fill="#fff"/>
+          <circle cx="24" cy="24" r="7.500" fill="#4CBB8F"/>
+          <circle cx="24" cy="24" r="3.500" fill="#12425E"/>
+          <circle cx="26.500" cy="21.500" r="1.400" fill="#fff"/>
+        </svg>
+        <h1 class="title">EyeBreak 20-20-20</h1>
+      </div>
+      <span class="status" id="status" data-active="false" role="status">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="statusText">Inactive</span>
+      </span>
+    </header>
+
+    <section class="panel">
+      <div class="ring" id="ring">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3A9AD9"/>
+              <stop offset="1" stop-color="#4CBB8F"/>
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="100" cy="100" r="90"/>
+          <circle class="ring-progress" id="ringProgress" cx="100" cy="100" r="90"/>
+        </svg>
+        <div class="ring-label">
+          <div class="time" id="time" aria-live="off">20:00</div>
+          <div class="sub" id="sub">Every 20 min</div>
+        </div>
+      </div>
+
+      <div class="intervals" id="intervals" role="radiogroup" aria-label="Reminder interval">
+        <button type="button" class="chip" role="radio" data-min="1"><b>1</b> min</button>
+        <button type="button" class="chip" role="radio" data-min="5"><b>5</b> min</button>
+        <button type="button" class="chip" role="radio" data-min="15"><b>15</b> min</button>
+        <button type="button" class="chip" role="radio" data-min="20"><b>20</b> min</button>
+      </div>
+      <p class="hint" id="hint">Pick how often you want a reminder.</p>
+
+      <div class="controls">
+        <button type="button" class="btn btn-start" id="startBtn">Start</button>
+        <button type="button" class="btn btn-stop" id="stopBtn">Stop</button>
+      </div>
+
+      <p class="warning" id="warning" hidden>
+        Notifications are blocked for Chrome. Allow them in your system settings to receive reminders.
+      </p>
+    </section>
+
+    <footer class="footer">Your eyes deserve a break. Stay healthy, stay focused.</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

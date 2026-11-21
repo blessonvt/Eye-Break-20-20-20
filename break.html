@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eye Break — Look Away</title>
+  <link rel="stylesheet" href="break.css">
+</head>
+<body>
+  <main class="break-app">
+    <header class="break-header">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoBgBreak" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5BB5E8"/>
+              <stop offset="1" stop-color="#3A8FD0"/>
+            </linearGradient>
+          </defs>
+          <rect width="48" height="48" rx="13" fill="url(#logoBgBreak)"/>
+          <path d="M6 24c4.5-7.5 10.5-11 18-11s13.5 3.500 18 11c-4.500 7.500-10.500 11-18 11S10.500 31.500 6 24z" fill="#fff"/>
+          <circle cx="24" cy="24" r="7.500" fill="#4CBB8F"/>
+          <circle cx="24" cy="24" r="3.500" fill="#12425E"/>
+          <circle cx="26.500" cy="21.500" r="1.400" fill="#fff"/>
+        </svg>
+        <div>
+          <h1 class="title">Look Away Break</h1>
+          <p class="cycle-tag" id="cycleTag">Interval: 20 min</p>
+        </div>
+      </div>
+      <span class="badge" id="breakBadge">REST</span>
+    </header>
+
+    <section class="break-card">
+      <p class="instruction">
+        Look at something about <strong>20 feet (6 m)</strong> away until the look-away timer finishes.
+      </p>
+
+      <div class="countdown-box">
+        <div class="countdown" id="breakCountdown">00:20</div>
+        <div class="countdown-sub" id="countdownSub">Looking away...</div>
+      </div>
+
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-done" id="doneContinueBtn" disabled>
+          Done, Continue
+        </button>
+        <button type="button" class="btn btn-stop" id="stopAllBtn">
+          Stop
+        </button>
+      </div>
+    </section>
+  </main>
+  <script src="break.js"></script>
+</body>
+</html>
